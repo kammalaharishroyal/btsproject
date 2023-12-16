@@ -35,7 +35,7 @@ function App() {
        
        
         </Route>
-        
+        <Route path="/account" element={<Account/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/register" element={<CustomerRegister/>}/>
@@ -45,7 +45,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/bus/:busid" element={<BusData/>}/>
         </Route>
-        <Route path="/account" element={<Account/>}/>
+       
    
       {/* <div className="App1">
       
