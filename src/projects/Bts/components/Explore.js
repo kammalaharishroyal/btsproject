@@ -35,7 +35,7 @@ function Explore() {
         return "Loading..."
     }
     if(error){
-        return <h2>There Was an Error:{error.messege}</h2>
+        return <h2>There Was an Error:{error.message}</h2>
     }
 
     return(
