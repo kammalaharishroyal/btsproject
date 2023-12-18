@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import '../btproject.css'
 
 function BtsLayout(){
     const activeStyles={

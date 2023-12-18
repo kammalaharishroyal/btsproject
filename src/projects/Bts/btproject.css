@@ -246,3 +246,11 @@ input, select, textarea {
   font-size: 16px;
   line-height: 1.5;
 }
+
+/* Vbts layout.js */
+.bts-layout-nav{
+  background-color:aquamarine;
+  padding: 15px;
+  justify-content: stretch;
+  margin: ;
+}

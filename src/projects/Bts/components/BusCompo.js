@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function BusCompo(props) {
     
     return (
-        <Link to={`${props.mobile}`}>
+        
         <div className="card2">
             {props.status===0&&<div>Available</div>}
             <div className='card2img'>
@@ -23,7 +23,6 @@ function BusCompo(props) {
 
 
         </div>
-</Link>
 
 
 

@@ -17,6 +17,11 @@ import CustomerRegister from './projects/Bts/components/CustomerRegister';
 import BtsLayout from './projects/Bts/components/BtsLayout';
 import BusesLayout from './projects/Bts/components/BusesLayout';
 import BusesDetail from './projects/Bts/components/BusesDetail';
+import Details from './projects/Bts/components/Details';
+import Pricing from './projects/Bts/components/Pricing';
+import Photos from './projects/Bts/components/Photos';
+import PageNotFound from './projects/Bts/components/PageNotFound';
+
 function App() {
  
   return (
@@ -25,13 +30,19 @@ function App() {
 
       <Routes>
       <Route path="/" element={<Layout/>}>
+        
         <Route index element={<Login/>}/>
         <Route path="bts" element={<BtsLayout/>}>
         <Route index element={<Dashboard/>}/>
         <Route path="income" element={<Income/>}/>
         <Route path="reviews" element={<Reviews/>}/>
         <Route path="buses" element={<BusesLayout/>}/>
-        <Route path="buses/:busid" element={<BusesDetail/>}/>
+        <Route path="buses/:busid" element={<BusesDetail/>}>
+          <Route index element={<Details/>}/>
+          <Route path='pricing' element={<Pricing/>}/>
+          <Route path='photos' element={<Photos/>}/>
+          
+        </Route>
        
        
         </Route>
@@ -44,6 +55,7 @@ function App() {
         <Route path="/bus" element={<Explore/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/bus/:busid" element={<BusData/>}/>
+        <Route path='*' element={<PageNotFound/>}/>
         </Route>
        
    

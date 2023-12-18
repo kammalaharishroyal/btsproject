@@ -1,15 +1,42 @@
 import React from 'react';
 import Card from './Card';
+import {getApi} from './Api';
+
 function Explore() {
     const [result,setresult]=React.useState([])
+    const [loading,setLoading]=React.useState(false)
+    const [error,setError]=React.useState(null)
+
     
-    React.useEffect(()=>{fetch("http://localhost:8080/bus/")
-    .then((data)=>data.json())
-    .then(x=>setresult(x))
+    React.useEffect(()=>{
+        async function loadvehicles(){
+            const url="http://localhost:8080/bus/";
+            setLoading(true)
+            
+            try{
+                const data1=await getApi(url);
+                setresult(data1)
+            }
+            catch(err){
+                console.log("error:",err)
+               setError(err)
+            }
+            finally{
+                setLoading(false)
+            }
+
+        }
+        loadvehicles();
     },[])
    
    
     //    console.log("avils:",getAvailble() )
+    if(loading){
+        return "Loading..."
+    }
+    if(error){
+        return <h2>There Was an Error:{error.messege}</h2>
+    }
 
     return(
         <div>
@@ -22,7 +49,7 @@ function Explore() {
                 {
                     result.map(
                         (data)=>{
-                            return <Card mobile={data.number} mail={data.availble} />
+                            return <Card key={data.number+data.number*2} mobile={data.number} mail={data.availble} />
                         }
                     )
                 }

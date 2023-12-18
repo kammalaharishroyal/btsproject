@@ -1,14 +1,38 @@
 import React from "react";
 import '../btproject.css';
+import { getApi } from "./Api";
 function Orders(){
     const [result,setresult]=React.useState([])
+    const [loading,setLoading]=React.useState(false)
+    const [error,setError]=React.useState(null)
     
-    React.useEffect(()=>{fetch("http://localhost:8080/order/")
-    .then((data)=>data.json())
-    .then(x=>setresult(x))
+    React.useEffect(()=>{
+    async function loadvehicles(){
+        setLoading(true)
+        
+        try{
+            const data1=await getApi("http://localhost:8080/order/");
+            setresult(data1)
+        }
+        catch(err){
+           setError(err)
+        }
+        finally{
+            setLoading(false)
+        }
+
+    }
+    loadvehicles();
 
     },[])
-    console.log("len",result);
+   
+    if(loading){
+        return "Loading..."
+    }
+    if(error){
+        console.log("iferror:",error)
+        return <h2>There Was an Error:{error.message}</h2>
+    }
     return (
         <div>
         <div className="orders">

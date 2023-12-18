@@ -13,7 +13,7 @@ code {
 }
 .nav{
   display: flex;
-  background-color:rgb(220, 232, 241);
+  background-color:rgb(220, 113, 113);
   justify-content: space-between;
   align-items: center;
   border-radius: 0px;
