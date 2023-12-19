@@ -1,7 +1,4 @@
 import '../btproject.css'
-import mobilelogo from '../Images/mobile-logo.png';
-import emaillogo from '../Images/email-logo.png';
-import { Link } from 'react-router-dom';
 function BusCompo(props) {
     
     return (

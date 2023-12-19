@@ -1,9 +1,10 @@
+
 function HomePage(){
     return(
 
         <section className="home-page-section">
         <h2>Find the perfect vehicle for your journey</h2>
-
+   
         <form>
             
             <input className="home-page-input" type="text" id="boardingPoint" placeholder="Boarding Point" name="boardingPoint" required/>

@@ -1,14 +1,14 @@
 import '../btproject.css'
 import React from 'react';
-import Card from './Card';
 import BusCompo from './BusCompo';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet} from 'react-router-dom';
 import { getApi } from './Api';
 
 function BusesListComponent() {
     const [result,setresult]=React.useState([])
     const [loading,setLoading]=React.useState(false)
     const [error,setError]=React.useState(null)
+   
     
     React.useEffect(()=>{
     async function loadvehicles(){
